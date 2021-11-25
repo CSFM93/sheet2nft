@@ -1,4 +1,4 @@
-# sheet2nft
+# Sheet2NFT
 
 Sheet2NFT is a no-code tool that I built with the help of Vue, Node.js, Google Sheets, Chainlink, Moralis, IPFS, Web3.Storage, and Filecoin, that allows users to easily create NFTs assets without knowing how to code, the only thing left for the user to do after using this tool is to deploy the NFT contract. Sheet2NFT will upload the images to IPFS, generate and upload the metadata to IPFS, generate an ERC-1155 contract, insert the metadata URI and upload it to IPFS.
 
