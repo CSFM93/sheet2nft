@@ -8,14 +8,14 @@ This repository contains the following directories:
 - Client;
 - Smart contracts.
 
-**Server**
-This directory contains the code of the Express application responsible for retrieving the data from a Google Sheet and turn it to NFT assets. This application will upload the images to IPFS, generate and upload the metadata to IPFS, generate an ERC-1155 contract, insert the metadata URI and upload it to IPFS.
+### Server
+This directory contains the code of the Express application responsible for retrieving the data from a Google Sheet and turning it to NFT assets. This application will upload the images to IPFS, generate and upload the metadata to IPFS, generate an ERC-1155 contract, insert the metadata URI and upload it to IPFS.
 
 
-**Client**
-This directory the code of the Sheet2NFT frontend application. It is a Vue app the uses Moralis,Chainlink, and Web3.Storage.
+### Client
+This directory contains the code of the Sheet2NFT frontend application. It is a Vue app the uses Moralis, Chainlink, and Web3.Storage.
 
-**Smart contracts**
+### Smart contracts
 This directory contains the following solidity files:
 - `sheet2NFT.sol` : this is the smart contract file that uses Chainlink to send an HTTP GET request containing the `sheetId` and `projectId` to the server. The hash of the contract deployed to the Kovan network is `0x3f8FfF4EC4a949A72B29c4Df6385d4e9F443BF61`
 - `MyNFT.sol` : this is the sample file that was used to generate an ERC-1155 contract for the user when he converts the data in a Sheet to NFT assets. 
@@ -30,7 +30,7 @@ In order to use Sheet2NFT you will need the following:
 
 
 ### Workflow
-1. Upload your images to a folder in your Google Drive account and allow them to be downloaded by any one with the link
+1. Upload your images to a folder in your Google Drive account and allow them to be downloaded by anyone with the link
 2. Make a copy of the sample Google Sheet provided by Sheet2NFT and fill it with your NFT items data (name, images, description,...). In the image field, paste the link of your image stored in Google Drive. At the moment we only accept Google Drive links.
 3. Allow anyone with your sheet link to view it and Copy your sheet id
 4. Go back to Sheet2NFT and use your Ethereum account to sign in. The authentication process is handled by Moralis and Metamask so your Ethereum account is safe.
@@ -39,7 +39,7 @@ In order to use Sheet2NFT you will need the following:
 7. After clicking the button mentioned above, We will use your Ethereum account to call a smart contract that uses Chainlink to make an HTTP GET request to Sheet2site server (Kovan network only). The request contains your projectId and sheetId.
 8. The server will use the data sent in the request and fetch the desired Google Sheet data. After that, it will download and store the images in a temporary local folder.
 9. Once the images are stored locally, the server will use Moralis to upload all of them to a folder in IPFS.
-10. The server will get the images URIs in IPFS, use them to create a metadata file for each image URI and then use Moralis upload every metadata file to a folder in IPFS
+10. The server will get the images URIs in IPFS, use them to create a metadata file for each image URI, and then use Moralis upload every metadata file to a folder in IPFS
 11. Once every metadata file is uploaded, the server will take the metadata URI and use it to create an Ethereum smart contract file. After the smart contract file with your metadata URI is created, the server will use Moralis to store this file in IPFS.
 12. Finally, the server will use Moralis to update your project with the number of items, images, metadata, and contract URI.
 13. The only thing left for you to do is copy your contract URI, paste it in the Remix IDE and deploy it 
