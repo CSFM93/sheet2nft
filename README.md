@@ -17,7 +17,7 @@ This directory the code of the Sheet2NFT frontend application. It is a Vue app t
 
 **Smart contracts**
 This directory contains the following solidity files:
-- `Sheet2NFT` : this is the smart contract file that uses Chainlink to send an HTTP GET request containing the `sheetId` and `projectId` to the server. The hash of the contract deployed to the Kovan network is `0x3f8FfF4EC4a949A72B29c4Df6385d4e9F443BF61`
+- `sheet2NFT.sol` : this is the smart contract file that uses Chainlink to send an HTTP GET request containing the `sheetId` and `projectId` to the server. The hash of the contract deployed to the Kovan network is `0x3f8FfF4EC4a949A72B29c4Df6385d4e9F443BF61`
 - `MyNFT.sol` : this is the sample file that was used to generate an ERC-1155 contract for the user when he converts the data in a Sheet to NFT assets. 
 
 
